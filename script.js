@@ -183,37 +183,34 @@ fetch("./footer.html")
 // ======================
 
 fetch("./header.html")
-
-  .then((response) => {
-
-    if (!response.ok) {
-
-      throw new Error("header not found");
-
-    }
-
-    return response.text();
-
-  })
-
-  .then((data) => {
+  .then(response => response.text())
+  .then(data => {
 
     const header = document.getElementById("header");
 
     if (header) {
-
       header.innerHTML = data;
 
+      // ACTIVE NAV
+      const currentPage =
+        window.location.pathname.split("/").pop();
+
+      document
+        .querySelectorAll(".nav-links a")
+        .forEach(link => {
+
+          if (
+            link.getAttribute("href") === currentPage
+          ) {
+            link.classList.add("active");
+          }
+
+        });
     }
-
   })
-
-  .catch((error) => {
-
-    console.log("header Error:", error);
-
+  .catch(error => {
+    console.log("Header Error:", error);
   });
-
 
 // ======================
 // EMAILJS INIT
@@ -281,3 +278,19 @@ if (leadForm) {
   });
 
 }
+
+// ======================
+// ACTIVE NAV LINK
+// ======================
+
+const currentPage = window.location.pathname.split("/").pop();
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+  const linkPage = link.getAttribute("href");
+
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+
+});
