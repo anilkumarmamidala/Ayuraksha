@@ -294,13 +294,6 @@ header {
   transform: scale(1.05);
 }
 
-/* Tablet */
-@media (max-width: 992px) {
-  .masonry-gallery {
-    column-count: 2;
-  }
-}
-
 /* Mobile */
 @media (max-width: 576px) {
   .masonry-gallery {
@@ -315,6 +308,7 @@ header {
     font-size: 2rem;
   }
 }
+
 /* =========================
    HERO SECTION
 ========================= */
@@ -451,9 +445,6 @@ section {
   background: #ffffff;
 }
 
-.gallery {
-  background: #eef8ef;
-}
 
 .testimonials {
   background: #f7fff8;
@@ -851,38 +842,6 @@ section {
   font-size: 14px;
 }
 
-/* =========================
-   GALLERY
-========================= */
-
-.gallery {
-  background: #eef8ef;
-}
-
-.gallery-grid {
-  max-width: 1200px;
-  margin: auto;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 250px;
-
-  object-fit: cover;
-  border-radius: 20px;
-
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
 
 /* =========================
    WHATSAPP
